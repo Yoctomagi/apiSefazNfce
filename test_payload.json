@@ -1,0 +1,54 @@
+{
+    "ide": {
+        "cUF": "43",
+        "cNF": "00000001",
+        "natOp": "VENDA",
+        "serie": "1",
+        "nNF": "1",
+        "dhEmi": "2023-10-27T10:00:00-03:00",
+        "cMunFG": "4314902",
+        "tpEmis": "1",
+        "cDV": "0",
+        "tpAmb": "2"
+    },
+    "emit": {
+        "CNPJ": "00000000000000",
+        "xNome": "EMPRESA TESTE",
+        "enderEmit": {
+            "xLgr": "RUA TESTE",
+            "nro": "100",
+            "xBairro": "CENTRO",
+            "cMun": "4314902",
+            "xMun": "PORTO ALEGRE",
+            "UF": "RS",
+            "CEP": "90000000"
+        },
+        "IE": "0000000000",
+        "CRT": "1"
+    },
+    "dest": null,
+    "det": [
+        {
+            "prod": {
+                "cProd": "1",
+                "xProd": "PRODUTO TESTE",
+                "NCM": "00000000",
+                "CFOP": "5102",
+                "uCom": "UN",
+                "qCom": "1.0000",
+                "vUnCom": "10.00",
+                "vProd": "10.00",
+                "uTrib": "UN",
+                "qTrib": "1.0000",
+                "vUnTrib": "10.00"
+            }
+        }
+    ],
+    "total": {
+        "vProd": "10.00",
+        "vNF": "10.00"
+    },
+    "pag": {
+        "vPag": "10.00"
+    }
+}
