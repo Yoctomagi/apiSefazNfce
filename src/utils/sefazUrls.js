@@ -80,3 +80,24 @@ exports.getUrlSefaz = (uf, ambiente) => {
     
     return urls[autorizador][tipoAmbiente];
 };
+
+const urlQrCode = {
+    RS: {
+        homologacao: 'https://nfce-homologacao.sefazrs.rs.gov.br/qrCode',
+        producao: 'https://nfce.sefazrs.rs.gov.br/qrCode'
+    },
+    // Default para SVRS (exemplo genérico)
+    SVRS: {
+        homologacao: 'https://nfce-homologacao.svrs.rs.gov.br/qrCode',
+        producao: 'https://nfce.svrs.rs.gov.br/qrCode'
+    }
+};
+
+exports.getUrlQrCode = (uf, ambiente) => {
+    const tipoAmbiente = ambiente == '1' ? 'producao' : 'homologacao';
+    const siglaUF = uf.toUpperCase();
+    
+    // Simplificado
+    if (urlQrCode[siglaUF]) return urlQrCode[siglaUF][tipoAmbiente];
+    return urlQrCode.SVRS[tipoAmbiente];
+};
