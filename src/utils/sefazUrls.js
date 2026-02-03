@@ -46,8 +46,8 @@ const urls = {
     },
     // RS - Rio Grande do Sul (Própria)
     RS: {
-        homologacao: 'https://nfce-homologacao.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx',
-        producao: 'https://nfce.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao4.asmx'
+        homologacao: 'https://nfce-homologacao.sefazrs.rs.gov.br/ws/NfeAutorizacao/NfeAutorizacao4.asmx',
+        producao: 'https://nfce.sefazrs.rs.gov.br/ws/NfeAutorizacao/NfeAutorizacao4.asmx'
     },
     // SP - São Paulo
     SP: {
@@ -85,6 +85,11 @@ const urlQrCode = {
     RS: {
         homologacao: 'https://nfce-homologacao.sefazrs.rs.gov.br/qrCode',
         producao: 'https://nfce.sefazrs.rs.gov.br/qrCode'
+    },
+    // SP - São Paulo
+    SP: {
+        homologacao: 'https://homologacao.nfce.fazenda.sp.gov.br/qrcode',
+        producao: 'https://www.nfce.fazenda.sp.gov.br/qrcode'
     },
     // Default para SVRS (exemplo genérico)
     SVRS: {

@@ -8,10 +8,9 @@ const testPayload = require('../../test_payload.json');
 
 exports.emitirNfce = async (req, res) => {
     try {
-       /*  const dadosVenda = req.body; */
-        const dadosVenda = testPayload;
+        const dadosVenda = req.body && req.body.ide ? req.body : testPayload;
         
-        console.log('1. Gerando XML...');
+        console.log('1. Gerando XML para UF:', dadosVenda.ide.cUF);
         const { xml, chave } = xmlBuilder.buildNfce(dadosVenda);
         
         console.log('2. Assinando XML...');

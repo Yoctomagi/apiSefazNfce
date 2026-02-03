@@ -146,12 +146,35 @@ class XmlBuilder {
     }
 
     gerarChaveAcesso(data) {
-        // Implementação simplificada. Na prática deve calcular o DV (Dígito Verificador)
-        // cUF(2) + AAMM(4) + CNPJ(14) + mod(2) + serie(3) + nNF(9) + tpEmis(1) + cNF(8) + cDV(1)
-        // O cDV deve ser calculado pelo algoritmo Módulo 11
+        const cUF = data.ide.cUF.padStart(2, '0');
+        const dhEmi = data.ide.dhEmi; // Format: YYYY-MM-DD...
+        const AAMM = dhEmi.substring(2, 4) + dhEmi.substring(5, 7);
+        const CNPJ = data.emit.CNPJ.padStart(14, '0');
+        const mod = '65';
+        const serie = data.ide.serie.padStart(3, '0');
+        const nNF = data.ide.nNF.padStart(9, '0');
+        const tpEmis = data.ide.tpEmis;
+        const cNF = data.ide.cNF.padStart(8, '0'); // Random number
         
-        // Placeholder para o exemplo
-        return '43230100000000000000650010000000011000000001'; 
+        const chaveSemDV = `${cUF}${AAMM}${CNPJ}${mod}${serie}${nNF}${tpEmis}${cNF}`;
+        
+        // Calculate DV (Modulo 11)
+        let soma = 0;
+        let peso = 2;
+        for (let i = chaveSemDV.length - 1; i >= 0; i--) {
+            soma += parseInt(chaveSemDV[i]) * peso;
+            peso++;
+            if (peso > 9) peso = 2;
+        }
+        
+        const resto = soma % 11;
+        let cDV = 11 - resto;
+        if (cDV >= 10) cDV = 0;
+        
+        // Update cDV in data object as well to match
+        data.ide.cDV = cDV.toString();
+        
+        return `${chaveSemDV}${cDV}`;
     }
 }
 

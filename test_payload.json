@@ -1,12 +1,12 @@
 {
     "ide": {
-        "cUF": "43",
+        "cUF": "35",
         "cNF": "00000001",
         "natOp": "VENDA",
         "serie": "1",
         "nNF": "1",
         "dhEmi": "2023-10-27T10:00:00-03:00",
-        "cMunFG": "4314902",
+        "cMunFG": "3550308",
         "tpEmis": "1",
         "cDV": "0",
         "tpAmb": "2"
@@ -18,9 +18,9 @@
             "xLgr": "RUA TESTE",
             "nro": "100",
             "xBairro": "CENTRO",
-            "cMun": "4314902",
-            "xMun": "PORTO ALEGRE",
-            "UF": "RS",
+            "cMun": "3550308",
+            "xMun": "SAO PAULO",
+            "UF": "SP",
             "CEP": "90000000"
         },
         "IE": "0000000000",
